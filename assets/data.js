@@ -288,7 +288,7 @@ window.CC_PRODUCTS = [
       en: "147 of 147 checks passed against the live server; data is backed up daily."
     },
     demo: "https://upasthit.dcampusbd.com",
-    note: { bn: "অ্যান্ড্রয়েড অ্যাপে ডেমো কোড 246810 দিলে একটা ডেমো অফিস তৈরি হয়", en: "Demo code 246810 in the Android app creates a sandbox office" },
+    note: { bn: "সাইট থেকে অ্যান্ড্রয়েড অ্যাপ নামিয়ে ডেমো কোড 246810 দিন, একটা ডেমো অফিস তৈরি হবে", en: "Download the Android app from the site and enter demo code 246810 for a sandbox office" },
     shots: [
       { f: "upasthit-1.webp", k: "p", c: { bn: "সেলফি দিয়ে হাজিরার পর", en: "After a selfie check-in" } },
       { f: "upasthit-2.webp", k: "p", c: { bn: "হাজিরার প্রমাণ", en: "Check-in evidence" } },
@@ -475,7 +475,7 @@ window.CC_PRODUCTS = [
     trade: { bn: "সেলস টিম ও কল সেন্টার", en: "Sales team & call centre" },
     name: { bn: "সেলস ডেস্ক · ডাক", en: "Sales Desk · Daak" },
     tone: "real",
-    status: { bn: "একটা কোম্পানিতে প্রতিদিন চলছে", en: "In daily use at a company" },
+    status: { bn: "সেলস ডেস্ক একটা কোম্পানিতে প্রতিদিন চলছে", en: "Sales Desk is in daily use at a company" },
     head: {
       bn: "গুগল শিটের জায়গায় আসল সেলস সিস্টেম, সাথে বাংলায় কথা বলা এআই কলার।",
       en: "A real sales system in place of the Google Sheet, plus an AI caller that speaks Bangla."
@@ -483,14 +483,14 @@ window.CC_PRODUCTS = [
     points: [
       { bn: "সেলস ডেস্ক: এক কোম্পানির ১০,১৪১টা লিড শিট থেকে তুলে এনেছি, একটা সারিও হারায়নি।", en: "Sales Desk: moved one company's 10,141 leads out of a sheet without losing a row." },
       { bn: "এজেন্ট এক ট্যাপে কলের ফল লেখে, ম্যানেজার দেখেন কোন বিজ্ঞাপন থেকে কত বিক্রি।", en: "Agents log a call in one tap; the manager sees sales per ad campaign." },
-      { bn: "ডাক: এআই আপনার লিডদের ফোন করে স্বাভাবিক বাংলায় কথা বলে, ডেমো বুক বা অর্ডার কনফার্ম করে।", en: "Daak: an AI that calls your leads in natural Bangla to book demos or confirm orders." }
+      { bn: "ডাক: এআই আপনার লিডদের ফোন করে স্বাভাবিক বাংলায় কথা বলে, ডেমো বুক বা অর্ডার কনফার্ম করে। এটা এখন ডেমো হিসেবে চালু।", en: "Daak: an AI that calls your leads in natural Bangla to book demos or confirm orders. It runs as a demo for now." }
     ],
     proof: {
       bn: "ডাক সবসময় শুরুতেই বলে যে সে একজন ডিজিটাল সহকারী আর কলটা রেকর্ড হচ্ছে। এই নিয়ম বদলানো যায় না।",
       en: "Daak always says it's a digital assistant and that the call is recorded. That rule can't be switched off."
     },
     demo: "https://daak.147.93.168.43.sslip.io/demo",
-    demoLabel: { bn: "এআই কলারের সাথে কথা বলুন", en: "Talk to the AI caller" },
+    demoLabel: { bn: "ডাক-এর ডেমো কলটা নিন", en: "Take Daak's demo call" },
     note: { bn: "সেলস ডেস্ক কাস্টমারের নিজের সিস্টেম, তাই স্ক্রিন দেখাচ্ছি না। ডাক-এর ডেমো ব্রাউজারেই চলে।", en: "Sales Desk is a client's own system, so its screens stay private. Daak's demo runs in the browser." },
     shots: [
       { f: "daak-1.webp", k: "d", c: { bn: "ডাক: একটা ব্যবসা বেছে কল নিন", en: "Daak: pick a business and take its call" } },

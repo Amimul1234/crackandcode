@@ -1,4 +1,4 @@
-const CACHE = "cc-2026-10-12-1";
+const CACHE = "cc-2026-10-12-2";
 const CORE = [
   "./",
   "index.html",
