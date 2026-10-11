@@ -29,6 +29,7 @@ window.CC_PRODUCTS = [
     demo: "https://demo.147.93.168.43.sslip.io",
     note: { bn: "ওয়েটার, কিচেন, ক্যাশিয়ার বা মালিক, যেকোনো ভূমিকায় এক ট্যাপে ঢুকুন", en: "One tap in as waiter, kitchen, cashier or owner" },
     shots: [
+      { f: "mezban-film.mp4", poster: "mezban-film.webp", k: "v", c: { bn: "৩০ সেকেন্ডের ভিডিও: আসল অ্যাপে আসল ট্যাপ", en: "30-second video: real taps in the real app" } },
       { f: "mezban-3.webp", k: "p", c: { bn: "ওয়েটার ফোনে টেবিলের অর্ডার নিচ্ছে", en: "A waiter taking a table's order" } },
       { f: "mezban-1.webp", k: "d", c: { bn: "মালিকের রিপোর্ট: বিক্রি, ভ্যাট, ঘণ্টাওয়ারি হিসাব", en: "Owner report: takings, VAT, sales by hour" } },
       { f: "mezban-2.webp", k: "d", c: { bn: "মাল কমে এলে আগেই সতর্ক করে", en: "Stock warns before an ingredient runs out" } }
@@ -133,6 +134,7 @@ window.CC_PRODUCTS = [
     demo: "https://malkhana.147.93.168.43.sslip.io",
     note: { bn: "মালিক, ম্যানেজার, কাউন্টার বা গোডাউন হয়ে ঢুকুন", en: "Enter as owner, manager, counter or godown" },
     shots: [
+      { f: "malkhana-film.mp4", poster: "malkhana-film.webp", k: "v", c: { bn: "৩০ সেকেন্ডের ভিডিও: কাউন্টারে বিল থেকে মালিকের লাভ পর্যন্ত", en: "30-second video: from a counter bill to the owner's profit" } },
       { f: "malkhana-1.webp", k: "d", c: { bn: "মালিকের দিনের খাতা: বিক্রি আর লুকানো লাভ", en: "Owner's day book: sales and locked profit" } },
       { f: "malkhana-2.webp", k: "p", c: { bn: "কে কেনা দাম আর লাভ দেখবে", en: "Who sees cost and profit" } },
       { f: "malkhana-3.webp", k: "d", c: { bn: "স্টাফ ধরে অডিট, লোকসানে বিক্রি চিহ্নিত", en: "Audit by staff, below-cost sales flagged" } }

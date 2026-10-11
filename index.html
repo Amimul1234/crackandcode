@@ -17,6 +17,7 @@
 <link rel="preload" href="assets/fonts/anek-bn.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/noto-sans-bengali-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Crack & Code Premium","url":"https://amimul1234.github.io/crackandcode/","logo":"https://amimul1234.github.io/crackandcode/assets/mark.svg","telephone":"+8801731304074","founder":{"@type":"Person","name":"Amimul Ehsan"},"address":{"@type":"PostalAddress","addressLocality":"Bogura","addressCountry":"BD"},"areaServed":"BD"}</script>
 </head>
 <body>
 <a class="skip" href="#showcase" data-en="Skip to the products">পণ্যে চলে যান</a>
@@ -30,7 +31,8 @@
   <nav class="bar-nav" aria-label="Sections">
     <a href="#showcase" data-en="Products">সফটওয়্যার</a>
     <a href="#why" data-en="Why us">কেন আমরা</a>
-    <a href="#custom" data-en="Custom build">নিজের মতো বানানো</a>
+    <a href="#team" data-en="Who we are">আমরা কারা</a>
+    <a href="#faq" data-en="Questions">প্রশ্ন</a>
   </nav>
   <div class="bar-end">
     <button class="lang" type="button" aria-label="Switch language"><span data-l="bn">বাং</span><span data-l="en">EN</span></button>
@@ -52,6 +54,8 @@
       </ul>
       <dl class="tally" id="tally"></dl>
     </div>
+    <p class="check is-wait" id="check" aria-live="polite"></p>
+    <p class="honest" data-en="Green means a real business uses it every day. Nothing is marked green until that's true, and there are no made-up reviews on this page.">সবুজ চিহ্ন মানে কোনো আসল ব্যবসা প্রতিদিন এটা চালায়। সেটা সত্যি না হওয়া পর্যন্ত আমরা সবুজ দিই না, আর এই পেজে কোনো বানানো রিভিউ নেই।</p>
   </section>
 
   <section class="showcase" id="showcase" aria-labelledby="sc-name">
@@ -63,6 +67,7 @@
         <p class="sc-trade" id="sc-trade"></p>
         <h2 class="sc-name" id="sc-name" tabindex="-1"></h2>
         <p class="status" id="sc-status"></p>
+        <p class="pulse is-wait" id="sc-pulse" aria-live="polite" hidden></p>
       </div>
       <figure class="stage" id="stage">
         <div class="stage-frame" id="stage-frame"></div>
@@ -151,6 +156,70 @@
     <p class="also"><span data-en="We also build apps and games:">অ্যাপ আর গেমও বানাই:</span> <span data-en="an offline file-transfer app, a 33-tool PDF kit, puzzle games on Google Play, and">নেট ছাড়া ফাইল পাঠানোর অ্যাপ, ৩৩টা টুলের PDF কিট, গুগল প্লেতে পাজল গেম, আর</span> <a href="https://amimul1234.github.io/swad/" target="_blank" rel="noopener" data-en="the viral food map of 64 districts">৬৪ জেলার ভাইরাল স্বাদের ম্যাপ</a>।</p>
   </section>
 
+  <section class="team" id="team" aria-labelledby="team-title">
+    <header class="sec-head">
+      <h2 id="team-title" class="sec-title" data-en="The person who answers the phone writes the code.">যিনি ফোন ধরবেন, তিনিই কোড লেখেন।</h2>
+      <p class="sec-sub" data-en="No sales agent in the middle. You talk to the people who build and run your software.">মাঝখানে কোনো সেলসম্যান নেই। যারা আপনার সফটওয়্যার বানায় আর চালায়, তাদের সাথেই সরাসরি কথা বলবেন।</p>
+    </header>
+    <div class="team-card">
+      <div class="who">
+        <div class="mono-mark" aria-hidden="true">আ</div>
+        <div>
+          <p class="who-name" data-en="Amimul Ehsan">আমিমুল এহসান</p>
+          <p class="who-role" data-en="Founder and software engineer · Bogura">প্রতিষ্ঠাতা ও সফটওয়্যার ইঞ্জিনিয়ার · বগুড়া</p>
+          <a class="who-link" href="https://github.com/Amimul1234" target="_blank" rel="noopener" data-en="Our code history on GitHub ↗">গিটহাবে আমাদের কাজের ইতিহাস ↗</a>
+        </div>
+      </div>
+      <ul class="facts">
+        <li>
+          <b data-en="We wrote every system on this page.">এই পেজের প্রতিটা সফটওয়্যার আমাদের নিজেদের লেখা।</b>
+          <span data-en="We don't buy someone else's software and resell it under our name. If something needs changing, we change it ourselves.">অন্যের সফটওয়্যার কিনে নিজের নামে বিক্রি করি না। কিছু বদলাতে হলে আমরা নিজেরাই বদলাই।</span>
+        </li>
+        <li>
+          <b data-en="We run our own servers.">সার্ভার আমরা নিজেরাই চালাই।</b>
+          <span data-en="When something goes wrong, nobody waits on a third company to fix it.">কোনো সমস্যা হলে অন্য কোনো কোম্পানির অপেক্ষায় বসে থাকতে হয় না।</span>
+        </li>
+        <li>
+          <b data-en="Every money path is tested before you get it.">টাকার প্রতিটা হিসাব পরীক্ষা করে তবেই হাতে দিই।</b>
+          <span data-en="More than a thousand automated checks run on these systems, like the hospital system where 968 screens were walked across 13 staff roles.">এই সিস্টেমগুলোতে হাজারের বেশি স্বয়ংক্রিয় পরীক্ষা চলে। যেমন হাসপাতালের সিস্টেমে ১৩ রকম স্টাফের ৯৬৮টা স্ক্রিন একে একে যাচাই করা হয়েছে।</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <header class="sec-head">
+      <h2 id="faq-title" class="sec-title" data-en="What owners ask us first">মালিকরা প্রথমে যা জিজ্ঞেস করেন</h2>
+      <p class="sec-sub" data-en="Straight answers. If yours isn't here, call.">সোজা উত্তর। আপনার প্রশ্নটা না থাকলে ফোন করুন।</p>
+    </header>
+    <div class="qa">
+      <details>
+        <summary data-en="Do I need to buy a computer?">কম্পিউটার কিনতে হবে?</summary>
+        <p data-en="No. Everything runs on an ordinary Android phone or any browser. If you want printed receipts, a normal thermal printer is enough.">না। সাধারণ অ্যান্ড্রয়েড ফোন বা যেকোনো ব্রাউজারেই চলে। রসিদ প্রিন্ট করতে চাইলে সাধারণ একটা থার্মাল প্রিন্টারই যথেষ্ট।</p>
+      </details>
+      <details>
+        <summary data-en="What happens when the internet goes?">নেট চলে গেলে কী হবে?</summary>
+        <p data-en="Mezban, Fita, Malkhana and Halkhata keep working without internet and sync when it returns. For the others, tell us how your area's connection is and we'll say honestly whether it fits.">মেজবান, ফিতা, মালখানা আর হালখাতা নেট ছাড়াও চলে, নেট ফিরলে নিজে থেকে মিলিয়ে নেয়। বাকিগুলোর জন্য আপনার এলাকার নেটের অবস্থা বলুন, মানাবে কিনা সোজাসুজি বলে দেব।</p>
+      </details>
+      <details>
+        <summary data-en="Can my staff steal or see my profit?">স্টাফ কি আমার লাভ দেখতে বা হিসাব এদিক-ওদিক করতে পারবে?</summary>
+        <p data-en="You decide what each staff role sees. Cost and profit are blocked on the server, and bills can't be deleted, only cancelled with a name and a reason that shows up in your audit.">কোন স্টাফ কী দেখবে, আপনি ঠিক করবেন। কেনা দাম আর লাভ সার্ভারেই আটকানো। বিল মুছে ফেলা যায় না, বাতিল করতে নাম আর কারণ লাগে, যা আপনার অডিটে উঠে যায়।</p>
+      </details>
+      <details>
+        <summary data-en="Can another business see my data?">আমার তথ্য কি অন্য কেউ দেখতে পাবে?</summary>
+        <p data-en="No. Each business is kept separate, in many products in its own database, and we test that one shop's records can't be opened from another.">না। প্রতিটা ব্যবসার তথ্য আলাদা রাখা হয়, অনেক সফটওয়্যারে একদম আলাদা ডেটাবেসে। এক দোকানের তথ্য অন্য দোকান থেকে খোলা যায় না, এটা আমরা পরীক্ষা করে নিশ্চিত করি।</p>
+      </details>
+      <details>
+        <summary data-en="How much does it cost?">দাম কত?</summary>
+        <p data-en="It depends on your business size and what you need. Call and tell us; we'll give you the number on the same call, before you commit to anything.">আপনার ব্যবসার আকার আর কী কী লাগবে তার ওপর নির্ভর করে। ফোন করে বলুন, একই কলে দাম জানিয়ে দেব। কোনো কিছুতে রাজি হওয়ার আগেই।</p>
+      </details>
+      <details>
+        <summary data-en="Who teaches my staff?">স্টাফকে শেখাবে কে?</summary>
+        <p data-en="We do, when we set it up. The screens are in Bangla with the words your staff already use, so most people find their way on day one.">চালু করার সময় আমরাই শিখিয়ে দিই। স্ক্রিন বাংলায়, আপনার স্টাফ মুখে যে শব্দ বলে সেই শব্দেই লেখা, তাই বেশিরভাগ মানুষ প্রথম দিনেই চালাতে পারেন।</p>
+      </details>
+    </div>
+  </section>
+
   <section class="talk" id="contact" aria-labelledby="talk-title">
     <h2 id="talk-title" class="talk-title" data-en="Let's talk about your business.">চলুন, আপনার ব্যবসা নিয়ে কথা বলি।</h2>
     <p class="talk-sub" data-en="Tell us what you run. We'll open the right demo with you on the call, free.">কী ব্যবসা চালান বলুন। ফোনেই আপনার সাথে ঠিক ডেমোটা খুলে দেখাব, কোনো খরচ নেই।</p>
@@ -158,7 +227,6 @@
     <div class="talk-acts">
       <a class="btn btn-sign" data-phone href="tel:+8801731304074" data-en="Call now">এখনই ফোন করুন</a>
       <a class="btn btn-line" id="wa-main" href="https://wa.me/8801731304074" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="btn btn-line" href="mailto:amimulahsan7@gmail.com" data-en="Email">ইমেইল</a>
     </div>
     <p class="talk-where" data-en="Based in Bogura, working with businesses across Bangladesh.">বগুড়ায় বসে সারা দেশের ব্যবসার সাথে কাজ করি।</p>
   </section>

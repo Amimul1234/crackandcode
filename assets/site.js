@@ -59,6 +59,9 @@
   function shotHTML(p, s) {
     const alt = esc(t(s.c));
     const src = `assets/shots/${s.f}`;
+    if (s.k === "v") {
+      return `<div class="dev-film"><video controls playsinline preload="none" poster="assets/shots/${s.poster}" aria-label="${alt}"><source src="${src}" type="video/mp4"></video></div>`;
+    }
     if (s.k === "d") {
       const h = p.demo ? host(p.demo) : (lang === "bn" ? "ব্যবসার ভেতরের সিস্টেম" : "internal system");
       return `<div class="dev-desk"><div class="dev-url">${ICON_LOCK}<span>${esc(h)}</span></div><img src="${src}" alt="${alt}" width="1440" height="900" decoding="async"></div>`;
@@ -75,6 +78,8 @@
       return;
     }
     const s = p.shots[shotIndex];
+    const playing = frame.querySelector("video");
+    if (playing) playing.pause();
     frame.innerHTML = shotHTML(p, s);
     frame.classList.toggle("is-desk", s.k === "d");
     $("#stage-cap").textContent = t(s.c);
@@ -84,7 +89,7 @@
   function renderThumbs() {
     const p = current;
     $("#thumbs").innerHTML = p.shots.length > 1
-      ? p.shots.map((s, i) => `<button type="button" data-i="${i}" aria-label="${esc(t(s.c))}" aria-pressed="${i === shotIndex}"><img src="assets/shots/${s.f}" alt="" loading="lazy" decoding="async"></button>`).join("")
+      ? p.shots.map((s, i) => `<button type="button" data-i="${i}" class="${s.k === "v" ? "is-film" : ""}" aria-label="${esc(t(s.c))}" aria-pressed="${i === shotIndex}"><img src="assets/shots/${s.poster || s.f}" alt="" loading="lazy" decoding="async"></button>`).join("")
       : "";
   }
 
@@ -95,6 +100,7 @@
     const st = $("#sc-status");
     st.className = `status t-${p.tone}`;
     st.innerHTML = `<i class="dot" aria-hidden="true"></i>${esc(t(p.status) || t(TONES[p.tone]))}`;
+    paintPulse();
     $("#sc-head").textContent = t(p.head);
     $("#sc-points").innerHTML = p.points.map((x) => `<li>${esc(t(x))}</li>`).join("");
     $("#sc-proof").textContent = t(p.proof);
@@ -128,6 +134,51 @@
       const left = railItem.offsetLeft - rail.clientWidth / 2 + railItem.clientWidth / 2;
       rail.scrollTo({ left, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     }
+  }
+
+  const pulse = new Map();
+  const secs = (ms) => num((ms / 1000).toFixed(1));
+
+  function paintPulse() {
+    const el = $("#sc-pulse");
+    const p = current;
+    if (!p || !p.demo) { el.hidden = true; return; }
+    el.hidden = false;
+    const r = pulse.get(p.id);
+    el.className = `pulse ${r ? (r.ok ? "is-up" : "is-down") : "is-wait"}`;
+    if (!r) el.textContent = lang === "bn" ? "চালু আছে কিনা, এইমাত্র যাচাই করছি…" : "Checking right now whether it's up…";
+    else if (r.ok) el.textContent = lang === "bn" ? `আপনার ফোন থেকে এইমাত্র যাচাই করলাম: চালু আছে, ${secs(r.ms)} সেকেন্ডে সাড়া দিল` : `Checked just now from your device: up, answered in ${secs(r.ms)} s`;
+    else el.textContent = lang === "bn" ? "এই মুহূর্তে সাড়া পেলাম না। ফোন করুন, আমরা খুলে দেখাব।" : "No answer right now. Call us and we'll open it for you.";
+  }
+
+  function paintCheck() {
+    const el = $("#check");
+    const all = P.filter((p) => p.demo);
+    const done = all.filter((p) => pulse.has(p.id));
+    const up = done.filter((p) => pulse.get(p.id).ok).length;
+    if (done.length < all.length) {
+      el.className = "check is-wait";
+      el.textContent = lang === "bn" ? `পেজ খোলার সাথে সাথে আপনার ফোন থেকে ${num(all.length)}টা ডেমো যাচাই হচ্ছে… ${num(done.length)}/${num(all.length)}` : `Checking ${all.length} demos from your device as the page opens… ${done.length}/${all.length}`;
+      return;
+    }
+    el.className = `check ${up === all.length ? "is-up" : "is-part"}`;
+    el.textContent = lang === "bn"
+      ? `এইমাত্র আপনার ফোন থেকে ${num(all.length)}টা ডেমো যাচাই করা হলো: ${num(up)}টা চালু।`
+      : `Just checked ${all.length} demos from your own device: ${up} are up.`;
+  }
+
+  function runChecks() {
+    const ping = (p) => {
+      const ctl = new AbortController();
+      const timer = setTimeout(() => ctl.abort(), 9000);
+      const t0 = performance.now();
+      return fetch(p.demo, { method: "HEAD", mode: "no-cors", cache: "no-store", signal: ctl.signal })
+        .then(() => ({ ok: true, ms: performance.now() - t0 }))
+        .catch(() => ({ ok: false, ms: 0 }))
+        .then((r) => { clearTimeout(timer); pulse.set(p.id, r); paintCheck(); if (current && current.id === p.id) paintPulse(); });
+    };
+    paintCheck();
+    P.filter((p) => p.demo).forEach(ping);
   }
 
   function transition(fn) {
@@ -168,6 +219,7 @@
     applyStatic();
     renderTrades();
     renderTally();
+    paintCheck();
     if (current) renderProduct();
   }
 
@@ -217,6 +269,7 @@
   io.observe($("#showcase"));
 
   renderAll();
+  runChecks();
   const first = location.hash.slice(1);
   if (byId.has(first)) {
     select(first);
