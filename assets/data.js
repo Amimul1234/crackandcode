@@ -10,6 +10,7 @@ window.CC_TONES = {
 window.CC_PRODUCTS = [
   {
     id: "restaurant",
+    probe: "/icons/icon-192.png",
     trade: { bn: "রেস্টুরেন্ট", en: "Restaurant" },
     name: { bn: "মেজবান", en: "Mezban" },
     tone: "demo",
@@ -37,6 +38,7 @@ window.CC_PRODUCTS = [
   },
   {
     id: "hospital",
+    probe: "/icon-192.png",
     trade: { bn: "হাসপাতাল ও ক্লিনিক", en: "Hospital & clinic" },
     name: { bn: "নিরোগ", en: "Nirog" },
     tone: "demo",
@@ -88,6 +90,7 @@ window.CC_PRODUCTS = [
   },
   {
     id: "tailor",
+    probe: "/icons/icon-192.png",
     trade: { bn: "দর্জির দোকান", en: "Tailor shop" },
     name: { bn: "ফিতা", en: "Fita" },
     tone: "demo",
@@ -115,6 +118,7 @@ window.CC_PRODUCTS = [
   },
   {
     id: "hardware",
+    probe: "/icons/icon-192.png",
     trade: { bn: "হার্ডওয়্যার ও রড-সিমেন্ট", en: "Hardware & building materials" },
     name: { bn: "মালখানা", en: "Malkhana" },
     tone: "demo",
@@ -142,6 +146,7 @@ window.CC_PRODUCTS = [
   },
   {
     id: "grocery",
+    probe: "/icon.svg",
     trade: { bn: "মুদি দোকান", en: "Grocery shop" },
     name: { bn: "হালখাতা", en: "Halkhata" },
     tone: "demo",
@@ -169,6 +174,7 @@ window.CC_PRODUCTS = [
   },
   {
     id: "gym",
+    probe: "/icon.svg",
     trade: { bn: "জিম", en: "Gym" },
     name: { bn: "আখড়া", en: "Akhra" },
     tone: "demo",
@@ -195,6 +201,7 @@ window.CC_PRODUCTS = [
   },
   {
     id: "laundry",
+    probe: "/icons/icon-192.png",
     trade: { bn: "লন্ড্রি", en: "Laundry" },
     name: { bn: "Cleaner Boy", en: "Cleaner Boy" },
     tone: "real",
@@ -221,6 +228,7 @@ window.CC_PRODUCTS = [
   },
   {
     id: "school",
+    probe: "/static/favicon.svg",
     trade: { bn: "স্কুলের ওয়েবসাইট", en: "School website" },
     name: { bn: "প্রাঙ্গণ", en: "Prangon" },
     tone: "demo",
@@ -273,6 +281,7 @@ window.CC_PRODUCTS = [
   },
   {
     id: "attendance",
+    probe: "/static/favicon.svg",
     trade: { bn: "অফিসের হাজিরা", en: "Office attendance" },
     name: { bn: "উপস্থিত", en: "Upasthit" },
     tone: "demo",
@@ -299,6 +308,7 @@ window.CC_PRODUCTS = [
   },
   {
     id: "car-showroom",
+    probe: "/static/img/mark.svg",
     trade: { bn: "গাড়ির শোরুম", en: "Car showroom" },
     name: { bn: "গাড়িঘর", en: "Garighor" },
     tone: "demo",

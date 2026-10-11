@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="bn"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../assets/site.css">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:var(--ink)}
+.og{position:relative;width:1200px;height:630px;color:var(--chalk);background:radial-gradient(700px 480px at 85% 30%,rgb(13 107 69 / .6),transparent 65%),var(--ink);display:grid;grid-template-columns:560px 1fr;align-items:center;padding:0 0 0 64px;box-sizing:border-box;overflow:hidden}
+.brand{position:absolute;left:64px;top:44px}
+.t{font-family:var(--body);font-size:30px;color:var(--mist)}
+.n{font-family:var(--display);font-weight:780;font-stretch:78%;font-size:120px;line-height:1.08;margin-top:6px}
+.h{font-family:var(--display);font-weight:600;font-size:34px;line-height:1.35;margin-top:18px;color:#e9efeb}
+.c{display:inline-flex;align-items:center;gap:12px;margin-top:28px;background:var(--signboard);color:var(--ink);font-weight:700;font-size:26px;padding:12px 22px;border-radius:14px}
+.vis{position:relative;height:630px}
+.vis .lap{position:absolute;top:110px;left:40px;width:760px}
+.vis .hand{position:absolute;top:150px;left:0;width:190px}
+.vis .hand.solo{left:120px;top:60px;width:270px}
+.vis .hand.solo2{left:330px;top:110px;width:270px}
+</style></head>
+<body><div class="og" id="og"></div>
+<script src="../assets/data.js"></script>
+<script>
+const id=new URLSearchParams(location.search).get('id');
+const P=window.CC_PRODUCTS;
+const MARK='<svg class="brand-mark" viewBox="0 0 32 32"><rect x="1" y="1" width="30" height="30" rx="8" fill="#fff"/><path d="M9 10.5 13.5 16 9 21.5M16.5 22h7" fill="none" stroke="#f4c20d" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const brand=`<div class="brand"><span class="brand" style="position:static;display:flex;align-items:center;gap:12px">${MARK.replace('class="brand-mark"','class="brand-mark" style="width:40px;height:40px"')}<span class="brand-word" style="font-size:30px">Crack <i>&amp;</i> Code</span><span class="brand-tier" style="font-size:13px">Premium</span></span></div>`;
+let left,vis;
+if(id==='home'){
+  left=`<div><div class="n" style="font-size:78px;line-height:1.15">আপনার ব্যবসার সফটওয়্যার আগেই বানানো আছে।</div><div class="c">১৯ ধরনের ব্যবসা · ১৪টা লাইভ ডেমো</div></div>`;
+  vis=`<div class="lap"><div class="lap-bar"><i></i><i></i><i></i><span>demo.147.93.168.43.sslip.io</span></div><img src="../assets/shots/mezban-1.webp"></div><div class="hand"><img src="../assets/shots/nirog-3.webp"></div>`;
+}else{
+  const p=P.find(x=>x.id===id);
+  const d=p.shots.find(s=>s.k==='d'), ph=p.shots.filter(s=>s.k==='p');
+  left=`<div><div class="t">${p.trade.bn}-এর সফটওয়্যার</div><div class="n">${p.name.bn}</div><div class="h">${p.head.bn}</div><div class="c">${p.demo&&p.tone!=='built'?'লাইভ ডেমো চালিয়ে দেখুন':'ফোন করলে ডেমো দেখাব'}</div></div>`;
+  vis=d?`<div class="lap"><div class="lap-bar"><i></i><i></i><i></i><span>${p.demo?new URL(p.demo).host:''}</span></div><img src="../assets/shots/${d.f}"></div>${ph[0]?`<div class="hand"><img src="../assets/shots/${ph[0].f}"></div>`:''}`
+      :`<div class="hand solo"><img src="../assets/shots/${ph[0].f}"></div>${ph[1]?`<div class="hand solo2"><img src="../assets/shots/${ph[1].f}"></div>`:''}`;
+}
+document.getElementById('og').innerHTML=brand+left+`<div class="vis">${vis}</div>`;
+</script></body></html>

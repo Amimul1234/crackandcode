@@ -1,4 +1,4 @@
-const CACHE = "cc-2026-10-12-3";
+const CACHE = "cc-2026-10-12-4";
 const CORE = [
   "./",
   "index.html",
@@ -35,10 +35,10 @@ self.addEventListener("fetch", (e) => {
       fetch(req)
         .then((res) => {
           const copy = res.clone();
-          caches.open(CACHE).then((c) => c.put("./", copy));
+          caches.open(CACHE).then((c) => c.put(req, copy));
           return res;
         })
-        .catch(() => caches.match("./"))
+        .catch(() => caches.match(req).then((r) => r || caches.match("./")))
     );
     return;
   }
